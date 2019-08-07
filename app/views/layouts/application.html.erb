@@ -23,6 +23,8 @@
             <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
+  
+
       </div>
     </nav>
     <% if notice present? %>
@@ -31,7 +33,7 @@
     <% if alert.present? %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    
+
     <%= yield %>
   </body>
 </html>
