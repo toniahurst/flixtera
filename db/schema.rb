@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_003020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "courses", force: :cascade do |t|
+  create_table "courses", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.decimal "cost"
@@ -35,8 +35,11 @@ ActiveRecord::Schema.define(version: 2019_08_08_003020) do
   end
 
   create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_sections_on_course_id"
   end
 
   create_table "users", force: :cascade do |t|
