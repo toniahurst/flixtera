@@ -12,7 +12,7 @@ def free?
 	cost.zero?
 end
 
-def premiusm?
+def premiums?
 	! free?
 end
 end
